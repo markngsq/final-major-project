@@ -29,7 +29,6 @@ var source = require('vinyl-source-stream');
 var browserify = require('browserify');
 var babelify = require('babelify');
 var watchify = require('watchify');
-var literalify = require('literalify');
 
 // files
 var packageJSON = require('./package.json');
