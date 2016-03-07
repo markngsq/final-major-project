@@ -246,7 +246,7 @@ gulp.task('build:dev', 'Build all resources', ['lint', 'js:dev', 'css', 'img']);
  * Asynchronous browser syncing of assets across multiple devices. Watches for changes to files and runs build tasks
 */
 
-gulp.task('dev:watch', 'Starts server and watch', function() {
+gulp.task('serve:watch', 'Starts server and watch', function() {
   browsersync.init({
     server: {
       baseDir: "./"
@@ -257,4 +257,4 @@ gulp.task('dev:watch', 'Starts server and watch', function() {
   gulp.watch(JS_WATCH_FILES, ['js:watch']);
 });
 
-gulp.task('dev', 'Build resources, starts server and watch', ['build:dev', 'dev:watch']);
+gulp.task('serve', 'Build resources, starts server and watch', ['build', 'serve:watch']);
