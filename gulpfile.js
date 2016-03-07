@@ -257,4 +257,4 @@ gulp.task('serve:watch', 'Starts server and watch', function() {
   gulp.watch(JS_WATCH_FILES, ['js:watch']);
 });
 
-gulp.task('serve', 'Build resources, starts server and watch', ['build', 'serve:watch']);
+gulp.task('serve', 'Build resources, starts server and watch', ['build:dev', 'serve:watch']);
