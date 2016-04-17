@@ -1,5 +1,11 @@
 {
   "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true,
+      "modules": true
+    }
+  },
   "plugins": [
     "react"
   ],
@@ -15,14 +21,7 @@
     "__DEV__": true,
     "__SERVER__": true
   },
-  "ecmaFeatures": {
-    "jsx": true,
-    "modules": true
-  },
   "rules": {
-    // Strict mode
-    "strict": [2, "never"],
-
     // Turn off these rules for now.
     "camelcase": 0,
     "comma-dangle": 0,
@@ -51,7 +50,6 @@
 
     // RELAX
     "no-underscore-dangle": 0,
-    "quotes": [0, "single"],
     "wrap-iife": 0,
     "strict": 0,
     "no-unused-expressions": 0,
@@ -69,8 +67,6 @@
     "no-trailing-spaces": 2,
     "one-var": [2, "never"],
     "curly": 2,
-
-    "no-underscore-dangle": 0,
 
     // Code style
     "indent": [2, 2],
