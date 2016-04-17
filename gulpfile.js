@@ -47,7 +47,7 @@ var IMG_DIST = DIST_DIRECTORY + '/img/';
 
 // Files
 var LINT_FILES = [
-  'src/**/*.{js,jsx}'
+  'src/**/*.js'
 ];
 var JS_WATCH_FILES = [
   'src/**/*.js'
@@ -63,10 +63,11 @@ var IMG_FILES = [
 ];
 
 // Bundles
-var JS_VENDOR_BUNDLE = packageJSON.name + '-vendor.js';
-var JS_APP = packageJSON.name + '.js';
-var CSS_VENDOR_BUNDLE = packageJSON.name + '-vendor.css';
-var CSS_APP = packageJSON.name + '.css';
+var BUNDLE_NAME = 'main';
+var JS_VENDOR_BUNDLE = BUNDLE_NAME + '-vendor.js';
+var JS_APP = BUNDLE_NAME + '.js';
+var CSS_VENDOR_BUNDLE = BUNDLE_NAME + '-vendor.css';
+var CSS_APP = BUNDLE_NAME + '.css';
 
 var buildBrowserifyBundle = function(options) {
   var watch = options.watch || false;
