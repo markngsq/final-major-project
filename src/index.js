@@ -8,12 +8,15 @@ import makeRoutes from './routes';
 import Root from './containers/Root';
 import configureStore from './stores/configureStore';
 
-const store = configureStore();
+let state = {};
+if (localStorage.getItem('appState')) {
+  //state = JSON.parse(localStorage.getItem('appState'));
+}
+const store = configureStore(state);
 const routes = makeRoutes(store);
-
-console.log(store.getState())
+const history = syncHistoryWithStore(browserHistory, store)
 
 render(
-  <Root history={browserHistory} routes={routes} store={store} />,
+  <Root history={history} routes={routes} store={store} />,
   document.getElementById('root')
 )
