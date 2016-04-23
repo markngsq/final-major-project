@@ -1,13 +1,17 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
+import { push } from 'react-router-redux';
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
 
 export class App extends Component {
   render() {
+
     return (
       <div>
-        <header></header>
+        <Header/>
         <section id="content" role="main">{this.props.children}</section>
-        <footer></footer>
+        <Footer/>
       </div>
     );
   }
@@ -19,14 +23,14 @@ App.propTypes = {
 };
 
 function mapStateToProps(state, ownProps) {
-  return {
-    app: state.app,
-  };
+  return {};
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    actions: {}
+    actions: {
+      goto: (path) => dispatch(push(path)),
+    }
   };
 }
 export default connect(mapStateToProps, mapDispatchToProps)(App);

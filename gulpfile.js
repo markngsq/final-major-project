@@ -63,7 +63,7 @@ var IMG_FILES = [
 ];
 
 // Bundles
-var BUNDLE_NAME = 'main';
+var BUNDLE_NAME = 'app';
 var JS_VENDOR_BUNDLE = BUNDLE_NAME + '-vendor.js';
 var JS_APP = BUNDLE_NAME + '.js';
 var CSS_VENDOR_BUNDLE = BUNDLE_NAME + '-vendor.css';

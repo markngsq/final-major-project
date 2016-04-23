@@ -1,0 +1,5 @@
+{
+  "name": "Components",
+  "private": true,
+  "main": "./Components.js"
+}
