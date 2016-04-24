@@ -4,22 +4,38 @@ import { push } from 'react-router-redux';
 import { componentsMap } from '../../config.js';
 import * as componentsActions from '../../actions/components';
 import BlankSpace from '../../components/BlankSpace';
+import NavigationSidebar from '../../components/NavigationSidebar';
+import NavigationHeader from '../../components/NavigationHeader';
+import SocialTwitter from '../../components/SocialTwitter';
+import SocialBlogPost from '../../components/SocialBlogPost';
+import MediaMusic from '../../components/MediaMusic';
+import MediaInstagram from '../../components/MediaInstagram';
+import MediaVideo from '../../components/MediaVideo';
+
+const reactComponentsMap = {
+  BlankSpace,
+  NavigationSidebar,
+  NavigationHeader,
+  SocialTwitter,
+  SocialBlogPost,
+  MediaMusic,
+  MediaInstagram,
+  MediaVideo,
+};
 
 export class Components extends Component {
+
   _renderComponent(componentId, key) {
     const component = componentsMap[componentId];
     if (component) {
-      switch (component.type) {
-      case 'BlankSpace':
-        return (
-          <BlankSpace
-            identifier={componentId}
-            columns={component.columns}
-            rows={component.rows}
-            key={key}
-          />
-        );
-      }
+      const componentProps = {
+        identifier: componentId,
+        columns: component.columns,
+        rows: component.rows,
+        key: key,
+      };
+      const ComponentType = reactComponentsMap[component.type];
+      return <ComponentType {...componentProps}/>;
     }
     return null;
   }
