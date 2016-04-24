@@ -7,6 +7,10 @@ import * as componentsActions from '../../actions/components';
 
 export class Search extends Component {
 
+  componentDidMount() {
+    this.refs.searchInput.focus();
+  }
+
   _handleOnChange(e) {
     this.props.actions.search.updateValue(e.target.value);
   }
@@ -26,6 +30,7 @@ export class Search extends Component {
     return (
       <input
         id="search-input"
+        ref="searchInput"
         className="form-control"
         type="text"
         value={this.props.search.value}
