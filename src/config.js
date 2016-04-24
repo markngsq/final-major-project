@@ -7,7 +7,7 @@ export const componentsArray = [
   'TW420', 'TW460', // Social - Twitter
   'BL440', 'BL460', 'BL480', // Social - Blog Post
   'MU620', 'MU640', // Media - Music
-  'IG240', 'IG820', // Media - Instagram
+  'IG260', 'IG820', // Media - Instagram
   'VI640', 'VI860', // Media - Video
 ];
 
@@ -38,7 +38,7 @@ export const componentsMap = {
   'MU620': { type: 'MediaMusic', columns: 6, rows: 2 },
   'MU640': { type: 'MediaMusic', columns: 6, rows: 4 },
 
-  'IG240': { type: 'MediaInstagram', columns: 2, rows: 4 },
+  'IG260': { type: 'MediaInstagram', columns: 2, rows: 4 },
   'IG820': { type: 'MediaInstagram', columns: 8, rows: 2 },
 
   'VI640': { type: 'MediaVideo', columns: 6, rows: 4 },
@@ -61,5 +61,7 @@ export const defaultSearchState = {
   value: '',
 };
 export const defaultComponentsState = {
-  list: ['HO220', 'VE240', 'HO420'],
+  list: componentsArray, // this line will show all components
+  //list: ['HO220', 'VE240', 'HO420'], // this line for showing selected components
+  //list: [], // this should be the default.
 };
