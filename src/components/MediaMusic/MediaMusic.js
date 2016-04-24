@@ -2,11 +2,11 @@ import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
 import ComponentWrapper from '../ComponentWrapper';
 
-export default class NavigationSidebar extends Component {
+export default class MediaMusic extends Component {
   render() {
     const componentProps = {
       identifier: this.props.identifier,
-      type: 'navigation',
+      type: 'media',
       columns: this.props.columns,
       rows: this.props.rows,
     };
@@ -16,13 +16,13 @@ export default class NavigationSidebar extends Component {
   }
 }
 
-NavigationSidebar.displayName = 'NavigationSidebar';
-NavigationSidebar.propTypes = {
+MediaMusic.displayName = 'MediaMusic';
+MediaMusic.propTypes = {
   identifier: PropTypes.string.isRequired,
   columns: PropTypes.number,
   rows: PropTypes.number,
 };
-NavigationSidebar.defaultProps = {
+MediaMusic.defaultProps = {
   columns: 2,
   rows: 2,
 };

@@ -2,11 +2,11 @@ import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
 import ComponentWrapper from '../ComponentWrapper';
 
-export default class NavigationSidebar extends Component {
+export default class SocialBlogPost extends Component {
   render() {
     const componentProps = {
       identifier: this.props.identifier,
-      type: 'navigation',
+      type: 'social',
       columns: this.props.columns,
       rows: this.props.rows,
     };
@@ -16,13 +16,13 @@ export default class NavigationSidebar extends Component {
   }
 }
 
-NavigationSidebar.displayName = 'NavigationSidebar';
-NavigationSidebar.propTypes = {
+SocialBlogPost.displayName = 'SocialBlogPost';
+SocialBlogPost.propTypes = {
   identifier: PropTypes.string.isRequired,
   columns: PropTypes.number,
   rows: PropTypes.number,
 };
-NavigationSidebar.defaultProps = {
+SocialBlogPost.defaultProps = {
   columns: 2,
   rows: 2,
 };
