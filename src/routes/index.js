@@ -1,12 +1,15 @@
-import React from 'react'
-import { Route, IndexRoute } from 'react-router'
+import React from 'react';
+import { Route, IndexRoute, IndexRedirect } from 'react-router';
 
 import App from '../containers/App';
 import Main from '../containers/Main';
 
 export default (store) => (
   <Route path="/" component={App}>
-    <IndexRoute component={Main}/>
+    <IndexRedirect to="/FMP" />
+    <Route path="/FMP">
+      <IndexRoute component={Main}/>
+    </Route>
     <Route path="*" pageTitle="Page Not Found"/>
   </Route>
 );

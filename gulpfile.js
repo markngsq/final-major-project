@@ -35,10 +35,6 @@ var packageJSON = require('./package.json');
 
 require('babel-core/register');
 
-// Listen Port for browsersynce proxy
-var LISTEN_PORT = '8080';
-var BROWSERSYNC_PROXY = "127.0.0.1:" + LISTEN_PORT;
-
 // Directory
 var DIST_DIRECTORY = './assets';
 var JS_DIST = DIST_DIRECTORY + '/js/';
@@ -249,7 +245,7 @@ gulp.task('build:dev', 'Build all resources', ['lint', 'js:dev', 'css', 'img']);
 gulp.task('serve:watch', 'Starts server and watch', function() {
   browsersync.init({
     server: {
-      baseDir: "./"
+      baseDir: './'
     }
   });
 
