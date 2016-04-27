@@ -2,7 +2,6 @@ import 'babel-polyfill';
 import React from 'react';
 import { render } from 'react-dom';
 import { browserHistory } from 'react-router';
-import { syncHistoryWithStore } from 'react-router-redux';
 import makeRoutes from './routes';
 import Root from './containers/Root';
 import configureStore from './stores/configureStore';
@@ -12,10 +11,9 @@ if (localStorage.getItem('appState')) {
   //state = JSON.parse(localStorage.getItem('appState'));
 }
 const store = configureStore(state);
-const routes = makeRoutes(store);
-const history = syncHistoryWithStore(browserHistory, store)
+const routes = makeRoutes();
 
 render(
-  <Root history={history} routes={routes} store={store} />,
+  <Root history={browserHistory} routes={routes} store={store} />,
   document.getElementById('root')
 )

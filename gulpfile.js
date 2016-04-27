@@ -6,6 +6,7 @@ var globby = require('globby');
 
 // build
 var browsersync = require('browser-sync').create();
+var historyApiFallback = require('connect-history-api-fallback');
 
 // css / js / img / lint
 var eslint = require('eslint/lib/cli');
@@ -56,6 +57,12 @@ var SCSS_FILES = [
 ];
 var IMG_FILES = [
   'src/**/*.{png,jpg}'
+];
+
+// Watch files
+var WATCH_FILES = [
+  { files: SCSS_FILES, tasks: ['css:watch'] },
+  { files: JS_WATCH_FILES, tasks: ['js:watch'] },
 ];
 
 // Bundles
@@ -245,12 +252,13 @@ gulp.task('build:dev', 'Build all resources', ['lint', 'js:dev', 'css', 'img']);
 gulp.task('serve:watch', 'Starts server and watch', function() {
   browsersync.init({
     server: {
-      baseDir: './'
+      baseDir: './',
+      middleware: [ historyApiFallback() ]
     }
   });
-
-  gulp.watch(SCSS_FILES, ['css:watch']);
-  gulp.watch(JS_WATCH_FILES, ['js:watch']);
+  WATCH_FILES.forEach((item) => {
+    gulp.watch(item.files, item.tasks);
+  });
 });
 
 gulp.task('serve', 'Build resources, starts server and watch', ['build:dev', 'serve:watch']);
