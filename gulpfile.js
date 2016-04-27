@@ -30,6 +30,7 @@ var source = require('vinyl-source-stream');
 var browserify = require('browserify');
 var babelify = require('babelify');
 var watchify = require('watchify');
+var envify = require('loose-envify/custom');
 
 // files
 var packageJSON = require('./package.json');
@@ -82,11 +83,17 @@ var buildBrowserifyBundle = function(options) {
   var watch = options.watch || false;
   var entry = options.entry || JS_APP_BUNDLE_ENTRY;
   var output = options.output || CSS_APP;
+  var env = options.env || 'development';
   var props = {
     entries: entry,
     debug: true,
     // defining transforms here will avoid crashing your stream
-    transform: [babelify],
+    transform: [
+      babelify,
+      envify({
+        NODE_ENV: env
+      }),
+    ],
     cache: {}, // required for watchify
     packageCache: {} // required for watchify
   };
@@ -167,7 +174,8 @@ gulp.task('js:vendor', false, function() {
 gulp.task('js:app', false, function() {
   return buildBrowserifyBundle({
     entry: JS_APP_BUNDLE_ENTRY,
-    output: JS_APP
+    output: JS_APP,
+    env: 'production',
   });
 });
 

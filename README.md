@@ -25,6 +25,13 @@ It then watches for changes to files and runs build tasks using browser-sync
     `npm bin`/gulp serve
 
 
+## Build ##
+
+To build assets, run the following command.
+
+    NODE_ENV=production `npm bin`/gulp build
+
+
 ## More Info
 
 You can run `gulp` to get a list of all the gulp tasks.
