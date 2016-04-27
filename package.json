@@ -15,6 +15,9 @@
   },
   "homepage": "https://github.com/markngsq/final-major-project#readme",
   "dependencies": {
+    "bootstrap": "^3.3.6",
+    "jquery": "^2.2.3",
+    "packery": "^2.0.0",
     "react": "^15.0.1",
     "react-dom": "^15.0.1"
   },

@@ -49,9 +49,15 @@ var LINT_FILES = [
 var JS_WATCH_FILES = [
   'src/**/*.js'
 ];
-var JS_VENDOR = [];
+var JS_VENDOR = [
+  'node_modules/jquery/dist/jquery.js',
+  'node_modules/bootstrap/dist/js/bootstrap.js',
+  'node_modules/packery/dist/packery.pkgd.js',
+];
 var JS_APP_BUNDLE_ENTRY = 'src/index.js';
-var CSS_VENDOR = [];
+var CSS_VENDOR = [
+  'node_modules/bootstrap/dist/css/bootstrap.css',
+];
 var SCSS_FILES = [
   'src/**/*.scss'
 ];
