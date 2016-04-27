@@ -26,19 +26,30 @@ export default class ComponentWrapper extends Component {
   render() {
     const divProps = {
       className: classnames(
+        'grid-item',
+        `grid-item-width-${this.props.columns}`,
+        `grid-item-height-${this.props.rows}`,
+        //`col-xs-${this.props.columns}`,
+        //`col-sm-${this.props.columns}`,
+        //`col-md-${this.props.columns}`,
+        //`col-lg-${this.props.columns}`,
+        //`row-${this.props.rows}`,
+      ),
+    };
+    const contentProps = {
+      className: classnames(
+        'grid-item-content',
         'component',
         `component-${this.props.type}`,
         `component-${this.props.type}-${this.props.identifier}`,
-        `col-xs-${this.props.columns}`,
-        `col-sm-${this.props.columns}`,
-        `col-md-${this.props.columns}`,
-        `col-lg-${this.props.columns}`,
         `row-${this.props.rows}`,
       ),
       ref: 'component',
     };
     return (
-      <div {...divProps}>{this.props.children}</div>
+      <div {...divProps}>
+        <div {...contentProps}>{this.props.children}</div>
+      </div>
     );
   }
 }

@@ -41,11 +41,15 @@ export class Components extends Component {
   }
 
   render() {
+    const packery = '{ "itemSelector": ".grid-item", "columnWidth": ".grid-sizer" }';
     return (
       <div id="components">
         <div className="container-fluid">
           <div className="row">
-            {this.props.components.list.map((componentId, key) => this._renderComponent(componentId, key))}
+            <div className="grid" data-packery={packery}>
+              <div id="grid-sizer" className="grid-sizer"></div>
+              {this.props.components.list.map((componentId, key) => this._renderComponent(componentId, key))}
+            </div>
           </div>
         </div>
       </div>

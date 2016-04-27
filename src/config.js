@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 // Components Array
 export const componentsArray = [
   'HO220', 'HO420', 'HO620', 'HO820', 'HO1220', // BlankSpace - Horizontal
@@ -61,7 +63,7 @@ export const defaultSearchState = {
   value: '',
 };
 export const defaultComponentsState = {
-  list: componentsArray, // this line will show all components
+  list: _.shuffle(componentsArray), // this line will show all components
   //list: ['HO220', 'VE240', 'HO420'], // this line for showing selected components
   //list: [], // this should be the default.
 };

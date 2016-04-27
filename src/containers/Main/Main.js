@@ -12,7 +12,6 @@ export class Main extends Component {
           <Search/>
           <Components/>
         </div>
-
       </div>
     );
   }
