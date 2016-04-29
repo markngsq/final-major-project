@@ -1,3 +1,4 @@
+import Packery from 'packery';
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { push } from 'react-router-redux';
@@ -24,6 +25,19 @@ const reactComponentsMap = {
 };
 
 export class Components extends Component {
+  componentDidMount() {
+    var pckry = new Packery( '#components-grid', {
+      itemSelector: '.grid-item',
+      columnWidth: '.grid-sizer',
+    });
+  }
+
+  componentDidUpdate() {
+    var pckry = new Packery( '#components-grid', {
+      itemSelector: '.grid-item',
+      columnWidth: '.grid-sizer',
+    });
+  }
 
   _renderComponent(componentId, key) {
     const component = componentsMap[componentId];
@@ -41,12 +55,11 @@ export class Components extends Component {
   }
 
   render() {
-    const packery = '{ "itemSelector": ".grid-item", "columnWidth": ".grid-sizer" }';
     return (
       <div id="components">
         <div className="container-fluid">
           <div className="row">
-            <div className="grid" data-packery={packery}>
+            <div id="components-grid" className="grid">
               <div id="grid-sizer" className="grid-sizer"></div>
               {this.props.components.list.map((componentId, key) => this._renderComponent(componentId, key))}
             </div>
