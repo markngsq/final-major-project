@@ -39,6 +39,11 @@ export class Header extends Component {
             </div>
           </div>
           <ul className="nav navbar-nav navbar-right">
+            <li>
+              <a href="#" className="wysiwyg-icon" onClick={this.props.actions.components.toggleWYSIWYG.bind(this)}>
+                <span className="glyphicon glyphicon-eye-open"></span>
+              </a>
+            </li>
             <li className="dropdown">
               <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                 Components <span className="caret"></span>
@@ -67,6 +72,7 @@ function mapDispatchToProps(dispatch) {
       goto: (path) => dispatch(push(path)),
       components: {
         add: (componentId) => dispatch(componentsActions.addComponent(componentId)),
+        toggleWYSIWYG: () => dispatch(componentsActions.toggleWYSIWYG()),
       },
     }
   };

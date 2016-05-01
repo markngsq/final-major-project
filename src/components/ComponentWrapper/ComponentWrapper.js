@@ -50,6 +50,9 @@ export default class ComponentWrapper extends Component {
       <div {...divProps}>
         <div {...contentProps}>
           <a className="close" onClick={this.props.closeComponent}>x</a>
+          <div className="overlay">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut</p>
+          </div>
           {this.props.children}
         </div>
       </div>

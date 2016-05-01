@@ -5,6 +5,14 @@ import Header from '../Header';
 import Footer from '../../components/Footer';
 
 export class App extends Component {
+  componentDidMount() {
+    document.body.classList.toggle('wysiwyg', this.props.components.isWYSIWYG)
+  }
+
+  componentDidUpdate() {
+    document.body.classList.toggle('wysiwyg', this.props.components.isWYSIWYG)
+  }
+
   render() {
     return (
       <div>
@@ -22,7 +30,9 @@ App.propTypes = {
 };
 
 function mapStateToProps(state, ownProps) {
-  return {};
+  return {
+    components: state.components,
+  };
 }
 
 function mapDispatchToProps(dispatch) {

@@ -66,4 +66,5 @@ export const defaultComponentsState = {
   //list: _.shuffle(componentsArray), // this line will show all components
   //list: ['HO420', 'HE420', 'SI240', 'VE240', 'HO420', 'BL440', 'SI240', 'HO220'], // this line for showing selected components
   list: [], // this should be the default.
+  isWYSIWYG: false,
 };

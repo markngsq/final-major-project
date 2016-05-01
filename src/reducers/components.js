@@ -22,6 +22,11 @@ export default function components(state = defaultComponentsState, action) {
         ...state.list.slice(index + 1),
       ],
     };
+  case 'TOGGLE_WYSIWYG':
+    return {
+      ...state,
+      isWYSIWYG: !state.isWYSIWYG,
+    };
   default:
     return state;
   }
