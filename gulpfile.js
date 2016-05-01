@@ -42,6 +42,7 @@ var DIST_DIRECTORY = './assets';
 var JS_DIST = DIST_DIRECTORY + '/js/';
 var CSS_DIST = DIST_DIRECTORY + '/css/';
 var IMG_DIST = DIST_DIRECTORY + '/img/';
+var FONT_DIST = DIST_DIRECTORY + '/fonts/';
 
 // Files
 var LINT_FILES = [
@@ -64,6 +65,9 @@ var SCSS_FILES = [
 ];
 var IMG_FILES = [
   'src/**/*.{png,jpg}'
+];
+var FONT_FILES = [
+  'node_modules/bootstrap/dist/fonts/*'
 ];
 
 // Watch files
@@ -247,13 +251,23 @@ gulp.task('img:min', false, function() {
     .pipe(gulp.dest(IMG_DIST));
 });
 
+/**
+ * Fonts
+ *
+ * Copying of fonts
+*/
+gulp.task('fonts', function() {
+  return gulp.src(FONT_FILES)
+    .pipe(gulp.dest(FONT_DIST));
+});
+
 
 /**
  * Build
 */
-gulp.task('build', 'Build all resources', ['js', 'css', 'img']);
+gulp.task('build', 'Build all resources', ['js', 'css', 'img', 'fonts']);
 
-gulp.task('build:dev', 'Build all resources', ['lint', 'js:dev', 'css', 'img']);
+gulp.task('build:dev', 'Build all resources', ['lint', 'js:dev', 'css', 'img', 'fonts']);
 
 
 /**
