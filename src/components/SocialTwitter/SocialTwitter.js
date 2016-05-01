@@ -19,6 +19,7 @@ export default class SocialTwitter extends Component {
       type: 'social',
       columns: this.props.columns,
       rows: this.props.rows,
+      closeComponent: this.props.closeComponent.bind(this),
     };
     return (
       <ComponentWrapper {...componentProps}>
@@ -33,6 +34,7 @@ SocialTwitter.propTypes = {
   identifier: PropTypes.string.isRequired,
   columns: PropTypes.number,
   rows: PropTypes.number,
+  closeComponent: PropTypes.func,
 };
 SocialTwitter.defaultProps = {
   columns: 2,

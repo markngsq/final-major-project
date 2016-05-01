@@ -9,6 +9,7 @@ export default class MediaMusic extends Component {
       type: 'media',
       columns: this.props.columns,
       rows: this.props.rows,
+      closeComponent: this.props.closeComponent.bind(this),
     };
     return (
       <ComponentWrapper {...componentProps}>
@@ -23,6 +24,7 @@ MediaMusic.propTypes = {
   identifier: PropTypes.string.isRequired,
   columns: PropTypes.number,
   rows: PropTypes.number,
+  closeComponent: PropTypes.func,
 };
 MediaMusic.defaultProps = {
   columns: 2,

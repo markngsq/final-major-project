@@ -55,6 +55,7 @@ export class Components extends Component {
         columns: component.columns,
         rows: component.rows,
         key: key,
+        closeComponent: this.props.actions.closeComponent.bind(this, componentId),
       };
       const ComponentType = reactComponentsMap[component.type];
       return <ComponentType {...componentProps}/>;
@@ -91,6 +92,7 @@ function mapDispatchToProps(dispatch) {
   return {
     actions: {
       goto: (path) => dispatch(push(path)),
+      closeComponent: (componentId) => dispatch(componentsActions.removeComponent(componentId)),
     }
   };
 }

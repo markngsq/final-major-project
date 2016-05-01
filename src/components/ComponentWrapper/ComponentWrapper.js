@@ -48,7 +48,10 @@ export default class ComponentWrapper extends Component {
     };
     return (
       <div {...divProps}>
-        <div {...contentProps}>{this.props.children}</div>
+        <div {...contentProps}>
+          <a className="close" onClick={this.props.closeComponent}>x</a>
+          {this.props.children}
+        </div>
       </div>
     );
   }
@@ -61,6 +64,7 @@ ComponentWrapper.propTypes = {
   children: PropTypes.node,
   columns: PropTypes.number,
   rows: PropTypes.number,
+  closeComponent: PropTypes.func,
 };
 ComponentWrapper.defaultProps = {
   columns: 2,
