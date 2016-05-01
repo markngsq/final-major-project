@@ -9,7 +9,6 @@ export class Main extends Component {
     return (
       <div id="main">
         <div className="container-fluid">
-          <Search/>
           <Components/>
         </div>
       </div>

@@ -15,36 +15,36 @@ export const componentsArray = [
 
 // Components Mapping
 export const componentsMap = {
-  'HO220': { type: 'BlankSpace', columns: 2, rows: 2 },
-  'HO420': { type: 'BlankSpace', columns: 4, rows: 2 },
-  'HO620': { type: 'BlankSpace', columns: 6, rows: 2 },
-  'HO820': { type: 'BlankSpace', columns: 8, rows: 2 },
-  'HO1220': { type: 'BlankSpace', columns: 12, rows: 2 },
+  'HO220': { type: 'BlankSpace', type_string: 'Blank Space', columns: 2, rows: 2, description: 'This is a blank space' },
+  'HO420': { type: 'BlankSpace', type_string: 'Blank Space', columns: 4, rows: 2, description: 'This is a blank space' },
+  'HO620': { type: 'BlankSpace', type_string: 'Blank Space', columns: 6, rows: 2, description: 'This is a blank space' },
+  'HO820': { type: 'BlankSpace', type_string: 'Blank Space', columns: 8, rows: 2, description: 'This is a blank space' },
+  'HO1220': { type: 'BlankSpace', type_string: 'Blank Space', columns: 12, rows: 2, description: 'This is a blank space' },
 
-  'VE240': { type: 'BlankSpace', columns: 2, rows: 4 },
-  'VE260': { type: 'BlankSpace', columns: 2, rows: 6 },
+  'VE240': { type: 'BlankSpace', type_string: 'Blank Space', columns: 2, rows: 4, description: 'This is a blank space' },
+  'VE260': { type: 'BlankSpace', type_string: 'Blank Space', columns: 2, rows: 6, description: 'This is a blank space' },
 
-  'SI220': { type: 'NavigationSidebar', columns: 2, rows: 2 },
-  'SI240': { type: 'NavigationSidebar', columns: 2, rows: 4 },
+  'SI220': { type: 'NavigationSidebar', type_string: 'Navigation Sidebar', columns: 2, rows: 2, description: 'This is a navigation sidebar' },
+  'SI240': { type: 'NavigationSidebar', type_string: 'Navigation Sidebar', columns: 2, rows: 4, description: 'This is a navigation sidebar' },
 
-  'HE420': { type: 'NavigationHeader', columns: 4, rows: 2 },
-  'HE620': { type: 'NavigationHeader', columns: 6, rows: 2 },
+  'HE420': { type: 'NavigationHeader', type_string: 'Navigation Header', columns: 4, rows: 2, description: 'This is a navigation header' },
+  'HE620': { type: 'NavigationHeader', type_string: 'Navigation Header', columns: 6, rows: 2, description: 'This is a navigation header' },
 
-  'TW420': { type: 'SocialTwitter', columns: 4, rows: 2 },
-  'TW460': { type: 'SocialTwitter', columns: 4, rows: 6 },
+  'TW420': { type: 'SocialTwitter', type_string: 'Social Twitter', columns: 4, rows: 2, description: 'This displays a Twitter widget embed' },
+  'TW460': { type: 'SocialTwitter', type_string: 'Social Twitter', columns: 4, rows: 6, description: 'This displays a Twitter widget embed' },
 
-  'BL440': { type: 'SocialBlogPost', columns: 4, rows: 4 },
-  'BL460': { type: 'SocialBlogPost', columns: 4, rows: 6 },
-  'BL480': { type: 'SocialBlogPost', columns: 4, rows: 8 },
+  'BL440': { type: 'SocialBlogPost', type_string: 'Social Blog Post', columns: 4, rows: 4, description: 'This displays a blog post widget' },
+  'BL460': { type: 'SocialBlogPost', type_string: 'Social Blog Post', columns: 4, rows: 6, description: 'This displays a blog post widget' },
+  'BL480': { type: 'SocialBlogPost', type_string: 'Social Blog Post', columns: 4, rows: 8, description: 'This displays a blog post widget' },
 
-  'MU620': { type: 'MediaMusic', columns: 6, rows: 2 },
-  'MU640': { type: 'MediaMusic', columns: 6, rows: 4 },
+  'MU620': { type: 'MediaMusic', type_string: 'Media Music', columns: 6, rows: 2, description: 'Displays a Soundcloud widget' },
+  'MU640': { type: 'MediaMusic', type_string: 'Media Music', columns: 6, rows: 4, description: 'Displays a Soundcloud widget' },
 
-  'IG260': { type: 'MediaInstagram', columns: 2, rows: 4 },
-  'IG820': { type: 'MediaInstagram', columns: 8, rows: 2 },
+  'IG260': { type: 'MediaInstagram', type_string: 'Media Instagram', columns: 2, rows: 4, description: 'This displays an Instagram widget embed' },
+  'IG820': { type: 'MediaInstagram', type_string: 'Media Instagram', columns: 8, rows: 2, description: 'This displays an Instagram widget embed' },
 
-  'VI640': { type: 'MediaVideo', columns: 6, rows: 4 },
-  'VI860': { type: 'MediaVideo', columns: 8, rows: 6 },
+  'VI640': { type: 'MediaVideo', type_string: 'Media Video', columns: 6, rows: 4, description: 'This displays a Vimeo widget embed' },
+  'VI860': { type: 'MediaVideo', type_string: 'Media Video', columns: 8, rows: 6, description: 'This displays a Vimeo widget embed' },
 };
 
 // Components Options
