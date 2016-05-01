@@ -11,7 +11,9 @@ export default class MediaVideo extends Component {
       rows: this.props.rows,
     };
     return (
-      <ComponentWrapper {...componentProps}/>
+      <ComponentWrapper {...componentProps}>
+        <iframe src="https://player.vimeo.com/video/154568298" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+      </ComponentWrapper>
     );
   }
 }
