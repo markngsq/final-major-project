@@ -11,7 +11,12 @@ export default class MediaMusic extends Component {
       rows: this.props.rows,
     };
     return (
-      <ComponentWrapper {...componentProps}/>
+
+      <ComponentWrapper {...componentProps}>
+        <div>
+          <iframe width="100%" height={250} scrolling="no" frameBorder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/260546255&color=ff006d&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false" />
+        </div>
+      </ComponentWrapper>
     );
   }
 }
