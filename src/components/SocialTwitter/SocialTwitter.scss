@@ -11,4 +11,9 @@
   width: 100%;
   background: #fff;
   overflow-y: auto;
+  display: none;
+}
+
+body.wysiwyg .twitter-tweet {
+  display: block;
 }
