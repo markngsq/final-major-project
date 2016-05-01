@@ -13,7 +13,7 @@ export default class MediaInstagram extends Component {
     };
     return (
       <ComponentWrapper {...componentProps}>
-        <iframe src="//instagram.com/p/BEjan22wdGQ/embed/" width="100%" height="100%" frameBorder="0" scrolling="no" allowTransparency="true"></iframe>
+        <iframe src="//instagram.com/p/BEjan22wdGQ/embed/" width="100%" height="100%" frameBorder="0" allowTransparency="true"></iframe>
       </ComponentWrapper>
     );
   }
