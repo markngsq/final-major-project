@@ -12,7 +12,7 @@ export default class MediaVideo extends Component {
     };
     return (
       <ComponentWrapper {...componentProps}>
-        <iframe src="https://player.vimeo.com/video/154568298" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        <iframe src="https://player.vimeo.com/video/154568298" width="100%" height="100%" frameBorder="0" webkitallowfullscreen mozallowfullscreen allowFullScreen></iframe>
       </ComponentWrapper>
     );
   }

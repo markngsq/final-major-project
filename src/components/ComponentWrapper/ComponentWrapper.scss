@@ -1,6 +1,14 @@
 .component {
   background-size: contain;
   background-repeat: no-repeat;
+  //background: none !important;
+  overflow: hidden;
+}
+
+.component iframe {
+  margin: 0 !important;
+  height: 100% !important;
+  width: 100% !important;
 }
 
 .grid-sizer, .grid-item {
