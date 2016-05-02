@@ -48,7 +48,13 @@ export default class ComponentWrapper extends Component {
     };
     return (
       <div {...divProps}>
-        <div {...contentProps}>{this.props.children}</div>
+        <div {...contentProps}>
+          <a className="close" onClick={this.props.closeComponent}>x</a>
+          <div className="overlay">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut</p>
+          </div>
+          {this.props.children}
+        </div>
       </div>
     );
   }
@@ -61,6 +67,7 @@ ComponentWrapper.propTypes = {
   children: PropTypes.node,
   columns: PropTypes.number,
   rows: PropTypes.number,
+  closeComponent: PropTypes.func,
 };
 ComponentWrapper.defaultProps = {
   columns: 2,

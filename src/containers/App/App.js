@@ -1,12 +1,19 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { push } from 'react-router-redux';
-import Header from '../../components/Header';
+import Header from '../Header';
 import Footer from '../../components/Footer';
 
 export class App extends Component {
-  render() {
+  componentDidMount() {
+    document.body.classList.toggle('wysiwyg', this.props.components.isWYSIWYG)
+  }
 
+  componentDidUpdate() {
+    document.body.classList.toggle('wysiwyg', this.props.components.isWYSIWYG)
+  }
+
+  render() {
     return (
       <div>
         <Header/>
@@ -23,7 +30,9 @@ App.propTypes = {
 };
 
 function mapStateToProps(state, ownProps) {
-  return {};
+  return {
+    components: state.components,
+  };
 }
 
 function mapDispatchToProps(dispatch) {

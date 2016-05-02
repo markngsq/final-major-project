@@ -9,6 +9,7 @@ export default class NavigationSidebar extends Component {
       type: 'navigation',
       columns: this.props.columns,
       rows: this.props.rows,
+      closeComponent: this.props.closeComponent.bind(this),
     };
     return (
       <ComponentWrapper {...componentProps}/>
@@ -21,6 +22,7 @@ NavigationSidebar.propTypes = {
   identifier: PropTypes.string.isRequired,
   columns: PropTypes.number,
   rows: PropTypes.number,
+  closeComponent: PropTypes.func,
 };
 NavigationSidebar.defaultProps = {
   columns: 2,

@@ -9,6 +9,7 @@ export default class SocialBlogPost extends Component {
       type: 'social',
       columns: this.props.columns,
       rows: this.props.rows,
+      closeComponent: this.props.closeComponent.bind(this),
     };
     return (
       <ComponentWrapper {...componentProps}/>
@@ -21,6 +22,7 @@ SocialBlogPost.propTypes = {
   identifier: PropTypes.string.isRequired,
   columns: PropTypes.number,
   rows: PropTypes.number,
+  closeComponent: PropTypes.func,
 };
 SocialBlogPost.defaultProps = {
   columns: 2,

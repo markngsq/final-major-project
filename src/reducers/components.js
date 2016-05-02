@@ -14,13 +14,18 @@ export default function components(state = defaultComponentsState, action) {
     }
     return state;
   case 'REMOVE_COMPONENT':
-    const index = state.components.indexOf(action.componentId);
+    const index = state.list.indexOf(action.componentId);
     return {
       ...state,
       list: [
-        ...state.activeFlags.slice(0, index),
-        ...state.activeFlags.slice(index + 1),
+        ...state.list.slice(0, index),
+        ...state.list.slice(index + 1),
       ],
+    };
+  case 'TOGGLE_WYSIWYG':
+    return {
+      ...state,
+      isWYSIWYG: !state.isWYSIWYG,
     };
   default:
     return state;

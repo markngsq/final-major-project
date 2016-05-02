@@ -9,6 +9,7 @@ export default class NavigationHeader extends Component {
       type: 'navigation',
       columns: this.props.columns,
       rows: this.props.rows,
+      closeComponent: this.props.closeComponent.bind(this),
     };
     return (
       <ComponentWrapper {...componentProps}/>
@@ -21,6 +22,7 @@ NavigationHeader.propTypes = {
   identifier: PropTypes.string.isRequired,
   columns: PropTypes.number,
   rows: PropTypes.number,
+  closeComponent: PropTypes.func,
 };
 NavigationHeader.defaultProps = {
   columns: 2,

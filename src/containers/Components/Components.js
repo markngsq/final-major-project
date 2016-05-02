@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import Packery from 'packery';
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
@@ -25,15 +26,22 @@ const reactComponentsMap = {
 };
 
 export class Components extends Component {
+  constructor() {
+    super();
+    this.pckry;
+    this._updatePackery = _.throttle(this._updatePackery.bind(this), 20);
+  }
+
   componentDidMount() {
-    var pckry = new Packery( '#components-grid', {
-      itemSelector: '.grid-item',
-      columnWidth: '.grid-sizer',
-    });
+    _.delay(this._updatePackery, 1000);
   }
 
   componentDidUpdate() {
-    var pckry = new Packery( '#components-grid', {
+    this._updatePackery();
+  }
+
+  _updatePackery() {
+    this.pckry = new Packery( '#components-grid', {
       itemSelector: '.grid-item',
       columnWidth: '.grid-sizer',
     });
@@ -47,6 +55,7 @@ export class Components extends Component {
         columns: component.columns,
         rows: component.rows,
         key: key,
+        closeComponent: this.props.actions.closeComponent.bind(this, componentId),
       };
       const ComponentType = reactComponentsMap[component.type];
       return <ComponentType {...componentProps}/>;
@@ -83,6 +92,7 @@ function mapDispatchToProps(dispatch) {
   return {
     actions: {
       goto: (path) => dispatch(push(path)),
+      closeComponent: (componentId) => dispatch(componentsActions.removeComponent(componentId)),
     }
   };
 }

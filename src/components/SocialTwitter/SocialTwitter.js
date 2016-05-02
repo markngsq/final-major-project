@@ -3,15 +3,28 @@ import classnames from 'classnames';
 import ComponentWrapper from '../ComponentWrapper';
 
 export default class SocialTwitter extends Component {
+  componentDidMount() {
+    if (this.props.rows === 2) {
+      window.twttr.widgets.createTweet('725972485167026176', this._div, {
+        cards: 'hidden',
+      });
+    } else {
+      window.twttr.widgets.createTweet('725972485167026176', this._div);
+    }
+  }
+
   render() {
     const componentProps = {
       identifier: this.props.identifier,
       type: 'social',
       columns: this.props.columns,
       rows: this.props.rows,
+      closeComponent: this.props.closeComponent.bind(this),
     };
     return (
-      <ComponentWrapper {...componentProps}/>
+      <ComponentWrapper {...componentProps}>
+        <div className="twitter-tweet" data-lang="en" ref={(c) => this._div = c}/>
+      </ComponentWrapper>
     );
   }
 }
@@ -21,6 +34,7 @@ SocialTwitter.propTypes = {
   identifier: PropTypes.string.isRequired,
   columns: PropTypes.number,
   rows: PropTypes.number,
+  closeComponent: PropTypes.func,
 };
 SocialTwitter.defaultProps = {
   columns: 2,

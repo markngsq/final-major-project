@@ -1,6 +1,63 @@
 .component {
   background-size: contain;
   background-repeat: no-repeat;
+  //background: none !important;
+  overflow: hidden;
+}
+
+body.wysiwyg .component {
+  background-image: none;
+}
+
+.component iframe {
+  margin: 0 !important;
+  //height: 100% !important;
+  width: 100% !important;
+  display: none;
+}
+
+body.wysiwyg .component iframe {
+  display: block;
+}
+
+.component .overlay {
+  background-color: rgba(0,0,0,.8);
+  color: #ccc;
+  padding: 10px;
+  height: 100%;
+  width: 100%;
+  display: none;
+}
+
+.component:hover .overlay {
+  display: block;
+}
+
+body.wysiwyg .component .overlay {
+  display: none;
+}
+
+.component .close {
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: rgba(0,0,0,.8);
+  text-align: center;
+  opacity: .9;
+  display: none;
+  color: #ccc;
+  border: 1px solid rgba(255,255,255,0.4);
+  line-height: 18px;
+}
+
+.component:hover .close {
+  display: block;
+}
+
+body.wysiwyg .component .close {
+  display: none;
 }
 
 .grid-sizer, .grid-item {
