@@ -12,7 +12,14 @@ export default class BlankSpace extends Component {
       closeComponent: this.props.closeComponent.bind(this),
     };
     return (
-      <ComponentWrapper {...componentProps}/>
+      <ComponentWrapper {...componentProps}>
+        <div className="overlay">
+          <p>// Blank Space <br /> <br />
+          Use blank space when you want space between other components.
+          This helps offset the layout by the specified amount of space you need it to have. </p>
+        </div>
+      </ComponentWrapper>
+
     );
   }
 }

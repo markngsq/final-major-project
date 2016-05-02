@@ -12,7 +12,13 @@ export default class NavigationSidebar extends Component {
       closeComponent: this.props.closeComponent.bind(this),
     };
     return (
-      <ComponentWrapper {...componentProps}/>
+      <ComponentWrapper {...componentProps}>
+      <div className="overlay">
+        <p>// Navigation <br /> <br />
+        While Websnap creates a single page site, Navigation allows you to create a multi-page site layout.
+        </p>
+      </div>
+    </ComponentWrapper>
     );
   }
 }

@@ -14,6 +14,10 @@ export default class MediaInstagram extends Component {
     return (
       <ComponentWrapper {...componentProps}>
         <iframe src="//instagram.com/p/BEjan22wdGQ/embed/" width="100%" height="100%" frameBorder="0" allowTransparency="false"></iframe>
+        <div className="overlay">
+          <p>// Instagram Feed <br /> <br />
+          Instagram brings not only the ability to feed images from a user to your layout, but also display comments staight from Instagram’s user database. </p>
+        </div>
       </ComponentWrapper>
     );
   }
