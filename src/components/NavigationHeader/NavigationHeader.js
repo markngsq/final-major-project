@@ -12,7 +12,13 @@ export default class NavigationHeader extends Component {
       closeComponent: this.props.closeComponent.bind(this),
     };
     return (
-      <ComponentWrapper {...componentProps}/>
+      <ComponentWrapper {...componentProps}>
+        <div className="overlay">
+          <p>// Title <br /> <br />
+          test
+          </p>
+        </div>
+      </ComponentWrapper>
     );
   }
 }

@@ -24,6 +24,12 @@ export default class SocialTwitter extends Component {
     return (
       <ComponentWrapper {...componentProps}>
         <div className="twitter-tweet" data-lang="en" ref={(c) => this._div = c}/>
+        <div className="overlay">
+          <p>// Twitter Feed <br /> <br />
+          News travels fast in the digital age. Most of the time, it is through social networks like twitter.
+          Scanning content straight from twitter’s database, Websnap pulls real-time updates straight to your layout without you needing to access twitter.
+          </p>
+      </div>
       </ComponentWrapper>
     );
   }

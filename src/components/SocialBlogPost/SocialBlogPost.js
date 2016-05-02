@@ -12,7 +12,14 @@ export default class SocialBlogPost extends Component {
       closeComponent: this.props.closeComponent.bind(this),
     };
     return (
-      <ComponentWrapper {...componentProps}/>
+      <ComponentWrapper {...componentProps}>
+      <div className="overlay">
+        <p>// Blogpost <br /> <br />
+          Nowadays, content is read through various arrays of news sites and blogs. <br />
+          Using RSS (Rich Site Summary), Websnap can feed content from another site straight into your layout.
+        </p>
+    </div>
+  </ComponentWrapper>
     );
   }
 }
