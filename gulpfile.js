@@ -64,7 +64,7 @@ var SCSS_FILES = [
   'src/**/*.scss'
 ];
 var IMG_FILES = [
-  'src/**/*.{png,jpg}'
+  'src/img/*.*'
 ];
 var FONT_FILES = [
   'node_modules/bootstrap/dist/fonts/*'
